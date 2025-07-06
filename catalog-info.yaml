@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: pf1jkol8x-nodejs-gitops
+  description: This is GitOps manifest for pf1jkol8x-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=pf1jkol8x-nodejs
+    backstage.io/kubernetes-id: pf1jkol8x-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: pf1jkol8x-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:pf1jkol8x-nodejs
